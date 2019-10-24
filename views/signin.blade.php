@@ -51,7 +51,7 @@
     </label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
+  <p><a href="register.blade.php">Pas encore inscrit ? S'inscrire</a></p>
 </form>
 </body>
 </html>

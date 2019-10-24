@@ -68,6 +68,7 @@
 
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
+    <p><a href="signin.blade.php">Déjà inscrit ? Se connecter</a></p>
 
 </form>
 </body>
