@@ -84,16 +84,27 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    Book title:
+    <br />
+    <input type="text" name="title" class="form-control" />
+    <br /><br />
+        type:
+    <br />
+    <input type="text" name="type" />
+    <br /><br />
+    Files:
+    <br />
+    <input type="file" name="logo" />
+    <br /><br />
+                    Description :
+                    <br />
+                    <textarea name="description"></textarea>
+                    <br /><br />
+    <input type="submit" value=" Save " />
+
+</form>
             </div>
         </div>
     </body>
