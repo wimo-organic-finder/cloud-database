@@ -10,21 +10,32 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Route pour la prmeière page (connexion/inscription)
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/signin', function () {
     return view('signin');
-});
+})->name('signin');
+
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
 
-Route::post('/upload', 'FilesController@store')->name('books.store');
+//Route pour user
+Route::get('/index', 'FilesController@show')->name('user_index');
+Route::get('/index/feedback', function () {
+    return view('user/feedback');
+})->name('user_feedback');
+Route::get('/index_active', function () {
+    return view('user/active_users');
+})->name('user_active');
 
-Route::get('/show', 'FilesController@show');
+//Route pour admin
+Route::get('admin/upload', 'FilesController@upload')->name('admin_upload');
 
+Route::post('','FilesController@store')->name('file.store');
+
+Route::get('admin/index', 'FilesController@showAdmin')->name('admin_index');
+
+
+// Route concernant la modification des fichiers stockés
 Route::get('delete/{id}', ['uses' =>'FilesController@delete', 'as' => 'file.delete']);
 Route::get('download/{id}', ['uses' =>'FilesController@download', 'as' => 'file.download']);
