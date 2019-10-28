@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,6 +40,12 @@
   </head>
   <body class="text-center">
     <form class="form-register">
+=======
+@extends('default')
+@section('title')Inscription @stop
+@section('content')
+    <form class="form-signin">
+>>>>>>> 924d75bca7b9a349da05d03355e1fcd8e65bdff8
   <img class="mb-4" src="images/cloud-logo.svg" alt="fefe" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
   <label for="inputLastName" class="sr-only">Nom</label>
@@ -68,8 +75,7 @@
 
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
-    <p><a href="signin.blade.php">Déjà inscrit ? Se connecter</a></p>
+    <p><a href="{{route('signin')}}">Déjà inscrit ? Se connecter</a></p>
 
 </form>
-</body>
-</html>
+@stop
