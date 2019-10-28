@@ -17,11 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
-    <style media="screen">
-    .form-rounded {
-border-radius: 1rem;
-}
-    </style>
+    <link rel="stylesheet" href="css/fileupload.css">
   </head>
 
   <body>
@@ -35,7 +31,7 @@ border-radius: 1rem;
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle"></span>  User</a>
+           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle"></span>  Admin</a>
            <div class="dropdown-menu" aria-labelledby="dropdown01">
              <a class="dropdown-item" href="#">Paramètres</a>
              <a class="dropdown-item" href="#">Another action</a>
@@ -43,13 +39,10 @@ border-radius: 1rem;
            </div>
          </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.blade.php">Accueil</a>
+            <a class="nav-link" href="#">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Feedback</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Upload</a>
+            <a class="nav-link" href="#">Upload</a>
           </li>
 
 
@@ -57,8 +50,11 @@ border-radius: 1rem;
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input style="border-radius: 1000px" class="form-control mr-sm-2"  type="text" placeholder="Search" aria-label="Search">
+          <button style="font-size: 11px; margin-right:15px; height : 30px; width:30px;border-radius: 300px" class="btn btn-sm btn-danger my-2 my-sm-0" type="submit">9</button>
+
+          <input style="border-radius: 1000px" class="form-control mr-sm-2"  type="text" placeholder="Recherche" aria-label="Search">
           <button style="border-radius: 1000px" class="btn btn btn-outline-secondary my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+
         </form>
       </div>
     </nav>
@@ -68,13 +64,17 @@ border-radius: 1rem;
       <div class="starter-template">
 
         <div class="jumbotron">
-          <h1 class="display-4">Envoyer un feedback</h1>
-          <p class="lead">Dites-nous ce que vous pensez de notre application !</p>
+          <h1 class="display-4">Uploader un fichier</h1>
+          <p class="lead">Veuillez préciser les informations relatives au fichier</p>
           <hr class="my-4">
 
-            <div class="form-group">
-                <textarea class="form-control form-rounded" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button style = "margin-top: 30px;" class="btn btn-secondary  " type="submit">Envoyer</button>
+            <div class="form-group form-upload">
+              <div class="form-inline nameType">
+                <input class="form-control" id="inputFileName" type="text" name="" value="" placeholder="Nom" required>
+                <input class="form-control" id="inputFileType" type="text" name="" value="" placeholder="Type" required>
+              </div>
+                <textarea class="form-control" name="name" rows="6" cols="80" placeholder="Description du fichier"></textarea>
+                <button style = "margin-top: 30px;" class="btn btn-success  " type="submit">Upload</button>
               </div>
 
         </div>
