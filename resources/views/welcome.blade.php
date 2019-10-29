@@ -1,100 +1,75 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Inscription</title>
 
-        <title>Laravel</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+<script type="text/javascript" src="js/bootstrap.js">
 
-            .full-height {
-                height: 100vh;
-            }
+</script>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet" type="text/css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="text-center">
+    <form class="form-signin">
+  <img class="mb-4" src="cloud-logo.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+  <label for="inputLastName" class="sr-only">Nom</label>
+  <input type="text" id="inputLastName" class="form-control" placeholder="Nom" required autofocus>
+  <label for="inputFirstName" class="sr-only">Prénom</label>
+  <input type="text" id="inputFirstName" class="form-control" placeholder="Prénom" required>
+  <label for="inputEmail" class="sr-only">Addresse e-mail</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Addresse e-mail" required autofocus>
+  <label for="inputPassword" class="sr-only">Mot de passe</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+  <label for="inputPasswordConfirm" class="sr-only">Mot de passe</label>
+  <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirmer mot de passe" required>
 
-            .content {
-                text-align: center;
-            }
+  <label for="mobilePhone" class="sr-only">Numéro de téléphone</label>
+  <input type="tel" id="mobilePhone" class="form-control" placeholder="Num. tél." required autofocus>
+  <label for="dateNaiss" class="sr-only">Date de naissance</label>
+  <input type="date" id="dateNaiss" class="form-control" placeholder="Date de naissance" required autofocus>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">Homme</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline2">Femme</label>
+  </div>
+  <div class="checkbox mb-3">
 
-            .title {
-                font-size: 84px;
-            }
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">S'inscrire</button>
+    <p><a href="signin.blade.php">Déjà inscrit ? Se connecter</p>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+</form>
+</body>
 </html>

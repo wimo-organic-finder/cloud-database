@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->enum('gender',['Male','Female']);
             $table->string('mobile_number',10)->unique();
             $table->date('birthday');
-            $table->boolean('is_admin');
+            $table->boolean('is_admin');            
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
