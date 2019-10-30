@@ -16,8 +16,6 @@
 <script type="text/javascript" src="{{URL::asset('js/bootstrap.js')}}">
 
 </script>
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
