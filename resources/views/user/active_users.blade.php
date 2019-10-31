@@ -1,4 +1,4 @@
-@extends('user/default')
+@extends('layouts.main')
 @section('content')
 
 <div class="starter-template">

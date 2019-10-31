@@ -1,4 +1,4 @@
-@extends('default')
+@extends('layouts.default')
 @section('title')Connexion @stop
 @section('css')css/signin.css
 @stop

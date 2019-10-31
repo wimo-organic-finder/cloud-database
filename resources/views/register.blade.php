@@ -39,7 +39,7 @@
   </head>
   <body class="text-center">
     <form class="form-register">
-@extends('default')
+@extends('layouts.default')
 @section('title')Inscription @stop
 @section('content')
     <form class="form-signin">
@@ -50,7 +50,7 @@
   <label for="inputFirstName" class="sr-only">Prénom</label>
   <input type="text" id="inputFirstName" class="form-control" placeholder="Prénom" required>
   <label for="inputEmail" class="sr-only">Addresse e-mail</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Addresse e-mail" required autofocus>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
   <label for="inputMobilePhone" class="sr-only">Numéro de téléphone</label>
   <input type="tel" id="inputMobilePhone" class="form-control" placeholder="Num. tél." required autofocus>
   <label for="inputBirthday" class="sr-only">Date de naissance</label>

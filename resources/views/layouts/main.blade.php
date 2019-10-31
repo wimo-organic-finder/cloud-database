@@ -35,11 +35,18 @@ border-radius: 1rem;
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle"></span>  User</a>
+           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle"></span>  {{ Auth::user()->nom}}</a>
            <div class="dropdown-menu" aria-labelledby="dropdown01">
              <a class="dropdown-item" href="#">Paramètres</a>
              <a class="dropdown-item" href="#">Another action</a>
-             <a class="dropdown-item text-danger" href="signin.blade.php">Se déconnecter</a>
+               <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                   {{ __('Se deconnecter') }}
+               </a>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                   @csrf
+               </form>
            </div>
          </li>
           <li class="nav-item">
@@ -65,26 +72,11 @@ border-radius: 1rem;
 
     <main role="main" class="container">
 
-<<<<<<< HEAD:resources/views/feedback.blade.php
-      <div class="starter-template">
-
-        <div class="jumbotron">
-          <h1 class="display-4">Envoyer un feedback</h1>
-          <p class="lead">Dites-nous ce que vous pensez de notre application !</p>
-          <hr class="my-4">
-
-            <div class="form-group">
-                <textarea class="form-control form-rounded" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button style = "margin-top: 30px;" class="btn btn-secondary  " type="submit">Envoyer</button>
-              </div>
-
-        </div>
 
 
       </div>
-=======
+
       @yield('content')
->>>>>>> 924d75bca7b9a349da05d03355e1fcd8e65bdff8:resources/views/user/default.blade.php
 
     </main><!-- /.container -->
 

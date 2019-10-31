@@ -11,22 +11,18 @@
 |
 */
 //Route pour la prmeière page (connexion/inscription)
-Route::get('/', function () {
-    return view('signin');
-})->name('signin');
-
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
 
 //Route pour user
-Route::get('/index', 'FilesController@show')->name('user_index');
-Route::get('/index/feedback', function () {
-    return view('user/feedback');
-})->name('user_feedback');
-Route::get('/index_active', function () {
-    return view('user/active_users');
-})->name('user_active');
+Route::middleware('auth')->group(function () {
+  Route::get('/index', 'FilesController@show')->name('user_index');
+  Route::get('/index/feedback', function () {
+      return view('user/feedback');
+  })->name('user_feedback');
+  Route::get('/index_active', function () {
+      return view('user/active_users');
+  })->name('user_active');
+
+});
 
 //Route pour admin
 Route::get('admin/upload', 'FilesController@upload')->name('admin_upload');
@@ -39,3 +35,8 @@ Route::get('admin/index', 'FilesController@showAdmin')->name('admin_index');
 // Route concernant la modification des fichiers stockés
 Route::get('delete/{id}', ['uses' =>'FilesController@delete', 'as' => 'file.delete']);
 Route::get('download/{id}', ['uses' =>'FilesController@download', 'as' => 'file.download']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
